@@ -1,12 +1,12 @@
 terraform {
- 
+/*
   cloud {
     organization = "policy-as-code-training-ck"
     workspaces {
       name = "tf-vault-qa-ck"
     }
   }
-
+*/
   required_providers {
     aws = {
       source  = "hashicorp/aws"
@@ -128,9 +128,9 @@ module "ec2_instances" {
   }
 }
 
-module "s3_bucket" {
-source = "app.terraform.io/policy-as-code-training/s3-bucket-ck/aws"
-version = "1.0.0"
+module "terraform-aws-s3-bucket-ck" {
+  source  = "app.terraform.io/policy-as-code-training-ck/terraform-aws-s3-bucket-ck/AWS"
+  version = "1.0.0"
 
 bucket_name = "conn-s3-bucket-mod1"
 }
