@@ -129,8 +129,8 @@ module "ec2_instances" {
   }
 }
 
-module "terraform-aws-s3-bucket-ck" {
-source = "app.terraform.io/policy-as-code-training-ck/terraform-aws-s3-bucket-ck/aws"
+module "s3_bucket" {
+source = "app.terraform.io/policy-as-code-training/s3-bucket-ck/aws"
 version = "1.0.0"
 
 bucket_name = "conn-s3-bucket-mod1"
